@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import  'scss/App.scss';
+import DefaultLayout from 'layouts/default';
+import { AppProvider } from 'contexts/wizard-context';
+import Wizard from 'components/wizard';
+import {initialState,
+wizardDataReducer} from 'contexts/reducers/wizard-data'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <AppProvider reducer={wizardDataReducer} initialState={initialState}>
+
+      <DefaultLayout>
+        <Wizard />
+       </DefaultLayout>
+      </AppProvider>
+
+    
     </div>
   );
 }
