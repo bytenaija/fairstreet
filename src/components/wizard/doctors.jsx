@@ -1,8 +1,9 @@
+import Input from "components/forms/input";
 import SlimCard from "components/forms/slim-card";
 import { addData, updateNav } from "contexts/reducers/wizard-data";
 import { useStore } from "contexts/wizard-context";
 import { useState } from "react";
-import { FaPlusCircle  } from "react-icons/fa";
+import { FaPlusCircle, FaSearch  } from "react-icons/fa";
 import Page from "./page";
 
 const { default: Button } = require("components/forms/button");
@@ -11,6 +12,7 @@ function Doctors() {
 
   const [{ data }, dispatch] = useStore()
   const [currentPage, setCurrentPage] = useState('default')
+  const [searchString, setSearchString] = useState('')
 
 
   const firstDoctor = data.doctors?.[0]
@@ -58,8 +60,18 @@ function Doctors() {
   }
 
      const SearchDoctor = () => {
-     return <>
-       sea
+       return <>
+       <div>What doctors do you want covered by your plan</div>
+       <Input className="input"
+         inputClass="input-class"
+         value={searchString}
+         icon={<FaSearch />}
+           placeholder="Search by name"
+           onChange={(e) => setSearchString(e.target.value)}
+         />
+<Button className="cont-btn" primary onClick={()=> setCurrentPage('add-doctors')}>Continue</Button>
+        <Button className="btn"  onClick={() => removeDoctor()}>Skip</Button>
+       
         </>
       
   }
