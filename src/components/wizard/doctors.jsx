@@ -1,98 +1,124 @@
 import Input from "components/forms/input";
 import SlimCard from "components/forms/slim-card";
-import { addData, updateNav } from "contexts/reducers/wizard-data";
+import Title from "components/forms/title";
+import { addData } from "contexts/reducers/wizard-data";
 import { useStore } from "contexts/wizard-context";
 import { useState } from "react";
-import { FaPlusCircle, FaSearch  } from "react-icons/fa";
+import { FaPlusCircle, FaSearch } from "react-icons/fa";
+import PropTypes from "prop-types";
 import Page from "./page";
 
-const { default: Button } = require("components/forms/button");
+import Button from "components/forms/button";
 
 function Doctors() {
+  const [{ data }, dispatch] = useStore();
+  const [currentPage, setCurrentPage] = useState("default");
+  const [searchString, setSearchString] = useState("");
 
-  const [{ data }, dispatch] = useStore()
-  const [currentPage, setCurrentPage] = useState('default')
-  const [searchString, setSearchString] = useState('')
+  const firstDoctor = data.doctors?.[0];
 
-
-  const firstDoctor = data.doctors?.[0]
-  
   const removeDoctor = () => {
-    const newData = { ...data, doctors: [] }
-    dispatch(addData(newData))
-    setCurrentPage('search-doctor')
-    
-  }
+    const newData = { ...data, doctors: [] };
+    dispatch(addData(newData));
+    setCurrentPage("search-doctor");
+  };
   const DefaultPage = () => {
     if (!data.doctors.length) {
-      setCurrentPage('search-doctor')
+      setCurrentPage("search-doctor");
     }
-    return data.doctors?.length  &&
+    return (
+      data.doctors?.length && (
         <>
-      <div>Do you want to keep {firstDoctor?.name} in network from {firstDoctor.clinic}</div>
-        <Button className="cont-btn" primary onClick={()=> setCurrentPage('add-doctors')}>Yes</Button>
-        <Button className="btn"  onClick={() => removeDoctor()}>No</Button>
+          <Title>
+            Do you want to keep {firstDoctor?.name} in network from{" "}
+            {firstDoctor.clinic}
+          </Title>
+          <Button
+            className="cont-btn"
+            primary
+            onClick={() => setCurrentPage("add-doctors")}
+          >
+            Yes
+          </Button>
+          <Button className="btn" onClick={() => removeDoctor()}>
+            No
+          </Button>
         </>
-      
-  }
+      )
+    );
+  };
 
   const DoctorsData = ({ name, specialization }) => {
-    return <div className="doctor-data">
-      <h2 className="doctor-data-title">{name}</h2>
-      <div>{specialization}</div>
-    </div>
-  }
+    return (
+      <div className="doctor-data">
+        <h2 className="doctor-data-title">{name}</h2>
+        <div>{specialization}</div>
+      </div>
+    );
+  };
 
+  DoctorsData.propTypes = {
+    name: PropTypes.string,
+    specialization: PropTypes.string,
+  };
+  const AddDoctors = () => {
+    return (
+      <>
+        {data.doctors.map((doctor) => (
+          <SlimCard key={doctor.name}>
+            <DoctorsData
+              name={doctor.name}
+              specialization={doctor.specialization}
+            />
+          </SlimCard>
+        ))}
 
-  
-   const AddDoctors = () => {
-     return <>
-       {data.doctors.map(doctor => <SlimCard>
-        <DoctorsData name={doctor.name} specialization={doctor.specialization} />
-        
-      </SlimCard>)}
-      
-       <SlimCard onClick={() => setCurrentPage('search-doctor')}>
-        <FaPlusCircle /> <span className="doctor-data-add">Add Doctor</span>
-      </SlimCard>
-        </>
-      
-  }
+        <SlimCard onClick={() => setCurrentPage("search-doctor")}>
+          <FaPlusCircle /> <span className="doctor-data-add">Add Doctor</span>
+        </SlimCard>
+      </>
+    );
+  };
 
-     const SearchDoctor = () => {
-       return <>
-       <div>What doctors do you want covered by your plan</div>
-       <Input className="input"
-         inputClass="input-class"
-         value={searchString}
-         icon={<FaSearch />}
-           placeholder="Search by name"
-           onChange={(e) => setSearchString(e.target.value)}
-         />
-<Button className="cont-btn" primary onClick={()=> setCurrentPage('add-doctors')}>Continue</Button>
-        <Button className="btn"  onClick={() => removeDoctor()}>Skip</Button>
-       
-        </>
-      
-  }
+  const SearchDoctor = () => {
+    return (
+      <>
+        <div>What doctors do you want covered by your plan</div>
+        <Input
+          className="input"
+          inputClass="input-class"
+          value={searchString}
+          icon={<FaSearch />}
+          placeholder="Search by name"
+          onChange={(e) => setSearchString(e.target.value)}
+        />
+        <Button
+          className="cont-btn"
+          primary
+          onClick={() => setCurrentPage("add-doctors")}
+        >
+          Continue
+        </Button>
+        <Button className="btn" onClick={() => removeDoctor()}>
+          Skip
+        </Button>
+      </>
+    );
+  };
   let content = null;
 
   switch (currentPage) {
-    case 'add-doctors':
-      content = <AddDoctors />
+    case "add-doctors":
+      content = <AddDoctors />;
       break;
-    case 'search-doctor':
-      content = <SearchDoctor />
+    case "search-doctor":
+      content = <SearchDoctor />;
       break;
     default:
-      content = <DefaultPage />
+      content = <DefaultPage />;
   }
 
-  return (
-    <Page>
-      {content}
-    </Page>
-   )
+  return <Page>{content}</Page>;
 }
 
-export default Doctors
+export default Doctors;

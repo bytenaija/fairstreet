@@ -1,11 +1,21 @@
-import React from 'react'
+import PropTypes from "prop-types";
+import React from "react";
 
-function Button({children, className, primary, ...props}) {
+function Button({ children, className, primary, ...props }) {
   return (
-    <div className={className} {...props} style={{backgroundColor: primary? '#ff5720': ''}}>
+    <div
+      className={className}
+      {...props}
+      style={{ backgroundColor: primary ? "#ff5720" : "" }}
+    >
       {children}
     </div>
-  )
+  );
 }
 
-export default Button
+Button.propTypes = {
+  primary: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+export default Button;

@@ -1,5 +1,5 @@
-export const ADD_DATA = 'ADD_DATA';
-export const UPDATE_NAV = 'UPDATE_NAV';
+export const ADD_DATA = "ADD_DATA";
+export const UPDATE_NAV = "UPDATE_NAV";
 
 export const addData = (data) => ({
   type: ADD_DATA,
@@ -12,15 +12,15 @@ export const updateNav = (location) => ({
 });
 
 export const initialState = {
-   nav: "Location",
+  nav: "Location",
   data: {
     doctors: [
       {
         name: "Dr. Li",
         clinic: "Alma Clinic",
-        specialization: "Internal Medicine"
-      }
-    ]
+        specialization: "Internal Medicine",
+      },
+    ],
   },
 };
 
