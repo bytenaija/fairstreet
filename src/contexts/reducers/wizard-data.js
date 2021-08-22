@@ -21,6 +21,7 @@ export const initialState = {
         specialization: "Internal Medicine",
       },
     ],
+    supplementaryBenefits: [],
   },
 };
 

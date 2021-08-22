@@ -15,7 +15,8 @@ flex: 1
   align-items: center;
   font-size: 20px;
   margin: 1rem;
-  color: #ffffff
+  color: #ffffff;
+  cursor: pointer;
 }
 
 
@@ -91,6 +92,51 @@ width: 100%;
 }
 
 .title{
-  font: Roboto,
+  font: Roboto;
+  font-size: 40px;
+  margin-bottom: 2rem;
+  line-height: 20px;
+}
 
+.search-card{
+  box-shadow: 1px 1px 10px 10px #b2b2b2;
+  min-width: 500px;
+  min-height: 300px;
+  padding: 1rem;
+  & span{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px
+  }
+}
+
+.search-card-doc{
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.card{
+  width: 400px;
+  height: 70px;
+  box-shadow: 0.5px 0.5px 5px 0.7px #b2b2b2;
+  margin-bottom: 1.5rem;
+  font-size: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.icon-benefit{
+  font-size: 20px;
+  width: 5%;
+}
+
+.title-benefits{
+  width: 95%;
+  display: flex;
+  justify-content: center;
 }

@@ -6,7 +6,7 @@ function Button({ children, className, primary, ...props }) {
     <div
       className={className}
       {...props}
-      style={{ backgroundColor: primary ? "#ff5720" : "" }}
+      style={{ backgroundColor: primary ? "#ff5720" : "", fontSize: 30 }}
     >
       {children}
     </div>

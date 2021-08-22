@@ -1,4 +1,18 @@
-[{
-  "name": "Nathan Lo",
-  "specialization": "Internal Medicine"
-}]
+[
+  {
+    "address": "1001 Potrero Avenue",
+    "city": "San Fransisco",
+    "name": "Nathan Lo",
+    "specialization": "Internal Medicine",
+    "state": "CA",
+    "zipCode": "94110"
+  },
+  {
+    "address": "1001 Potrero Avenue",
+    "city": "San Fransisco",
+    "name": "Nathan Loblaw",
+    "specialization": "Internal Medicine",
+    "state": "CA",
+    "zipCode": "94110"
+  }
+]
