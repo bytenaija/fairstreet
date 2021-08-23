@@ -5,8 +5,9 @@
 .content{
   min-height: 90vh;
   display: flex;
+  flex: 1;
 }
 
 .nav{
-  min-height: 20%;
+  flex: 0.2 0.2;
 }

@@ -14,7 +14,13 @@ const SearchResults = ({ doctors, setCurrentPage, setSearchString }) => {
     setSearchString("");
     setCurrentPage("add-doctors");
   };
-  return <SearchCard doctors={doctors} addDoctor={addDoctor}></SearchCard>;
+  return (
+    <SearchCard
+      doctors={doctors}
+      addDoctor={addDoctor}
+      setCurrentPage={setCurrentPage}
+    ></SearchCard>
+  );
 };
 
 SearchResults.propTypes = {

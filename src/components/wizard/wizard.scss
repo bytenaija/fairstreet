@@ -115,7 +115,7 @@ width: 100%;
   margin-bottom: 2rem;
 }
 
-.card{
+.card, .plan-card{
   width: 400px;
   height: 70px;
   box-shadow: 0.5px 0.5px 5px 0.7px #b2b2b2;
@@ -139,4 +139,26 @@ width: 100%;
   width: 95%;
   display: flex;
   justify-content: center;
+}
+
+.plan-card{
+margin-right: 2rem;
+margin-left: 2rem;
+  min-height: 300px;
+  & > .title-benefits{
+    display: block;
+    text-align: center
+  }
+}
+
+.choose-plans{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.getstarted-section{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

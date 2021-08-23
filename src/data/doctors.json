@@ -14,5 +14,14 @@
     "specialization": "Internal Medicine",
     "state": "CA",
     "zipCode": "94110"
+  },
+  {
+    "address": "123 Boggy Crescent",
+    "city": "Miami",
+    "clinic": "Alma Clinic",
+    "name": "Dr. Li",
+    "specialization": "Internal Medicine",
+    "state": "FL",
+    "zipCode": "94110"
   }
 ]

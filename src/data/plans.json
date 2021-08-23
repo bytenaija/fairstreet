@@ -1,0 +1,41 @@
+[
+  {
+    "bestFit": true,
+    "copayPrimary": 5,
+    "copaySpecialist": 25,
+    "cost": 24,
+    "currency": "$",
+    "deductible": 750,
+    "description": "Lowest projected out of pocket spending",
+    "frequency": "month",
+    "id": 1,
+    "logo": "https://www.pngkey.com/png/full/223-2231172_kaiser-permanente-logo.png",
+    "name": "Senior Advantage Basic"
+  },
+  {
+    "bestFit": false,
+    "copayPrimary": 15,
+    "copaySpecialist": 35,
+    "cost": 0,
+    "currency": "$",
+    "deductible": 750,
+    "description": "",
+    "frequency": "month",
+    "id": 2,
+    "logo": "https://www.aetna.com/content/dam/aetna/images/logos/Aetna_Logo_ss_Violet_RGB_Coated.svg",
+    "name": "Medicare Advantage Elite Plan"
+  },
+  {
+    "bestFit": false,
+    "copayPrimary": 15,
+    "copaySpecialist": 35,
+    "cost": 0,
+    "currency": "$",
+    "deductible": 750,
+    "description": "",
+    "frequency": "month",
+    "id": 2,
+    "logo": "https://logos-world.net/wp-content/uploads/2021/02/Anthem-Inc.-Logo.png",
+    "name": "MediBlue Select"
+  }
+]

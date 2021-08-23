@@ -1,0 +1,130 @@
+[
+  {
+    "preffered": true,
+    "sectionOne": {
+      "logo": "https://www.pngkey.com/png/full/223-2231172_kaiser-permanente-logo.png",
+      "name": "Senior Advantage Basic",
+      "outOfPocket": {
+        "value": "$1,800/yr"
+      },
+      "planType": "HMO",
+      "premium": {
+        "value": "$24/month"
+      }
+    },
+    "sectionThree": {
+      "deductable": {
+        "value": "$750/yr"
+      },
+      "maximum": {
+        "value": "$6500/yr"
+      },
+      "name": "Costs"
+    },
+    "sectionTwo": {
+      "doctors": [
+        {
+          "delta": "positive",
+          "value": "Ann Li"
+        },
+        {
+          "delta": "positive",
+          "value": "Nathan Lo"
+        }
+      ],
+      "name": "Doctors and Drugs",
+      "prescriptionDrugs": [
+        {
+          "delta": "positive",
+          "value": "levothyroxine"
+        },
+        {
+          "delta": "positive",
+          "value": "Metformin"
+        }
+      ]
+    }
+  },
+  {
+    "sectionOne": {
+      "logo": "https://logos-world.net/wp-content/uploads/2021/02/Anthem-Inc.-Logo.png",
+      "name": "Mediblue Select",
+      "outOfPocket": {
+        "delta": "negative",
+        "value": "+$200"
+      },
+      "planType": "HMO",
+      "premium": {
+        "delta": "positive",
+        "value": "-$24/mo"
+      }
+    },
+    "sectionThree": {
+      "deductable": {
+        "delta": "positive",
+        "value": "Same"
+      },
+      "maximum": {
+        "delta": "negative",
+        "value": "+$250"
+      },
+      "name": "Costs"
+    },
+    "sectionTwo": {
+      "doctors": [
+        {
+          "delta": "negative",
+          "value": "Ann Li out of network"
+        }
+      ],
+      "name": "Doctors and Drugs",
+      "prescriptionDrugs": [
+        {
+          "delta": "positive",
+          "value": "Same"
+        }
+      ]
+    }
+  },
+  {
+    "sectionOne": {
+      "logo": "https://www.aetna.com/content/dam/aetna/images/logos/Aetna_Logo_ss_Violet_RGB_Coated.svg",
+      "name": "Medicare Advantage Elite Plan",
+      "outOfPocket": {
+        "delta": "negative",
+        "value": "+$650"
+      },
+      "planType": "PPO",
+      "premium": {
+        "delta": "positive",
+        "value": "-$24/mo"
+      }
+    },
+    "sectionThree": {
+      "deductable": {
+        "delta": "positive",
+        "value": "Same"
+      },
+      "maximum": {
+        "delta": "negative",
+        "value": "+$250"
+      },
+      "name": "Costs"
+    },
+    "sectionTwo": {
+      "doctors": [
+        {
+          "delta": "positive",
+          "value": "Same"
+        }
+      ],
+      "name": "Doctors and Drugs",
+      "prescriptionDrugs": [
+        {
+          "delta": "negative",
+          "value": "Levothyroxine not covered"
+        }
+      ]
+    }
+  }
+]

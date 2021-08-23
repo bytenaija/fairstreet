@@ -5,15 +5,15 @@ const sideMenu = [
   },
   {
     name: "Pick a Plan",
-    children: ["Location", "Doctors", "Drugs", "Supplemental Benefits"],
+    children: [],
   },
   {
     name: "Enroll",
-    children: ["Location", "Doctors", "Drugs", "Supplemental Benefits"],
+    children: [],
   },
   {
     name: "Get Started with your plan",
-    children: ["Location", "Doctors", "Drugs", "Supplemental Benefits"],
+    children: [],
   },
 ];
 

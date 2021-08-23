@@ -1,5 +1,6 @@
-import BenefitCard from "./card";
+import BenefitCard from "./benefits-card";
 import Button from "components/forms/button";
+import ChoosePlans from "./choose-plans";
 import { FaCheckCircle } from "react-icons/fa";
 import Page from "components/wizard/page";
 import Title from "components/forms/title";
@@ -57,7 +58,7 @@ const SupplementalBenefits = () => {
   let content = null;
   switch (currentPage) {
     case "choose-plans":
-      content = <DefaultPage />;
+      content = <ChoosePlans />;
       break;
     default:
       content = <DefaultPage />;

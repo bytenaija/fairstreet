@@ -2,11 +2,11 @@
 
 .sideMenu{
   background: #f2f2f2;
-  width: 25%;
+  flex: 0.2;
   color: #000000;
 }
 
-.menu, .submenu{
+ .submenu{
   padding: 1.2rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -17,9 +17,10 @@
 }
 
 
+
 .submenu{
   padding: 0;
-  
+
 }
 
 
@@ -31,4 +32,22 @@
   width: 85%;
   padding: 1rem 1rem;
 
+}
+
+.sub-menu-item{
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  justify-content: space-between;
+  .indicator{
+    width: 0.7rem;
+  }
+  .menu{
+    padding: 1.2rem 1rem;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
 }

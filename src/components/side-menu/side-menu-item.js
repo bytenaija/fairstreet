@@ -15,18 +15,30 @@ const SideMenuItem = ({
 }) => {
   const [{ nav }, dispatch] = useStore();
   const onClick = () => {
-    setChildrenOpen((open) => (open === title ? null : title));
+    if (sideMenu.length > 0)
+      setChildrenOpen((open) => (open === title ? null : title));
 
-    if (!childrenOpened && !nav) {
-      dispatch(updateNav(sideMenu[0] || null));
+    if (!childrenOpened && !sideMenu.includes(nav)) {
+      dispatch(updateNav(sideMenu[0] || title));
     } else {
       dispatch(updateNav(nav));
     }
   };
+
+  console.log(nav, title);
   return (
     <>
-      <div className="menu" onClick={onClick}>
-        {index}. {title} {childrenOpened ? <FaAngleDown /> : <FaAngleRight />}
+      <div className="sub-menu-item">
+        <div
+          className="indicator"
+          style={{
+            background: childrenOpened ? "" : nav == title ? "#f45d48" : "",
+          }}
+        ></div>
+        <div className="menu" onClick={onClick}>
+          {index}. {title}
+          {childrenOpened ? <FaAngleDown /> : <FaAngleRight />}
+        </div>
       </div>
       {childrenOpened &&
         sideMenu.map((menu) => (

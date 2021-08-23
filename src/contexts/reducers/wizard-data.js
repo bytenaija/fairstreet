@@ -12,7 +12,7 @@ export const updateNav = (location) => ({
 });
 
 export const initialState = {
-  nav: "Location",
+  nav: "Build Health Profile",
   data: {
     doctors: [
       {

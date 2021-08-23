@@ -16,7 +16,7 @@ function Doctors() {
   const [doctors, setDoctors] = useState([]);
   const search = () => {
     const docs = doctorsData.filter((doctor) =>
-      doctor.name.toLowerCase().includes(searchString)
+      doctor.name.toLowerCase().includes(searchString.toLowerCase())
     );
 
     setDoctors(docs);
